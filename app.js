@@ -1,8 +1,11 @@
 const cardNumberInput = document.getElementById("card-number");
+const cnum = document.querySelector(".cnum");
 
-cardNumberInput.addEventListener("keypress", (event) => {
-  const key = event.keyCode;
-  if (key < 48 || key > 57 && key !== 8) {
-    event.preventDefault();
-  }
+cardNumberInput.addEventListener("keyup", (event) => {
+    const key = event.key;
+    console.log(key);
+
+    let card = cardNumberInput.value;
+    cnum.textContent = card;
 });
+
