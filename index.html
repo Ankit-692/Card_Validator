@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="app.js" defer></script>
+    <title>Card Validator</title>
+</head>
+<body>
+    <header><img src="images/logo.png" alt=""></header>
+    <div class="top">
+        <div class="input">
+            <form>
+                <label for="card-number">Enter Card Number:</label><br>
+                <input type="text" id="card-number" pattern="[0-9]{16}" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" required><br>
+                <input type="submit" value="CHECK" id="but">
+            </form> 
+        </div>
+        <div class="card">
+            <img src="images/chip.png" alt="" class="chip">
+            <img src="images/card.jpg" alt="">
+            <span class="bname">BARODA CENTRAL COOPERATIVE BANK, LTD.</span>
+            <span class="scheme">classic Credit</span>
+            <span class="type">Visa</span>
+        </div>
+    </div>
+</body>
+</html>
