@@ -15,21 +15,23 @@
     <header><img src="images/logo.png" alt=""></header>
     <div class="top">
         <div class="input">
-            <form>
+            <form onsubmit="return check()" class="checkform">
                 <label for="card-number">Enter Card Number:</label><br>
-                <input type="text" id="card-number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" required><br>
+                <input type="text" id="card-number" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1')" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" required><br>
                 <input type="submit" value="CHECK" id="but">
             </form> 
         </div>
-        <div class="card">
+        <div class="card" data-tilt>
             <img src="images/chip.png" alt="" class="chip">
             <img src="images/card.jpg" alt="" class="bluecard">
             <span class="bname">BARODA CENTRAL COOPERATIVE BANK, LTD.</span>
             <span class="scheme">classic Credit</span>
             <span class="cnum">xxxx xxxx xxxx xxxx</span>
             <span class="type">Mastercard</span>
-            <!-- <span class="flag"><img src="https://www.countryflagsapi.com/png/india" alt=""></span> -->
+            <span class="flag"><img crossorigin="anonymous" src="https://countryflagsapi.com/png/zimbabwe" alt=""></span>
         </div>
     </div>
+    <section class="validity">Invalid Card</section>
 </body>
+<script type="text/javascript" src="tilt.js"></script>
 </html>

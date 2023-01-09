@@ -4,15 +4,19 @@
     box-sizing: border-box;
     font-family: Lato;
 }
+:root{
+ --valid : red;
+}
 
 header{
     height: 5.4rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.251);
     font-weight: 700;
     font-size: 34px;
     line-height: 25px;
     letter-spacing: 0.06em;
     padding: 15px;
+    border-bottom: 4px solid #256FFF;
 }
 
 .top{
@@ -57,6 +61,12 @@ input[type=submit]{
     font-size: 26px;
     margin-left: 50%;
     transform: translateX(-50%);
+    transition: all .3s ease-in;
+}
+
+#but:hover{
+    background: #0c5af5;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.434);
 }
 
 .card{
@@ -68,12 +78,18 @@ input[type=submit]{
     box-shadow: 0px 50px 100px -10px rgba(50, 50, 93, 0.756) , 
                 0px 30px 60px -20px rgba(0, 0, 0, 0.664), 
                 0px -2px 6px 5px rgba(10, 37, 64, 0.664) inset;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
 }
+
 
 .chip{
     position: absolute;
-    left: 35px;
-    top: 35px;
+    left: 38px;
+    top: 40px;
+    height: 60px;
+    width: 75px;
+    transform: translateZ(20px);
 }
 
 .bluecard{
@@ -103,10 +119,10 @@ input[type=submit]{
 }
 
 .cnum{
-    top: 200px;
+    top: 185px;
     font-size: 38px;
     letter-spacing: 8px;
-    right: 52px;
+    left: 52px;
 }
 
 .type{
@@ -117,9 +133,47 @@ input[type=submit]{
 
 .flag{
     position: absolute;
-    top: 300px;
-    left: 0;
-    height: 50px;
-    width: 50px;
+    top: 255px;
+    left: 30px;
+    height: 80px;
+    width: 80px;
     z-index: 100;
+    overflow: hidden;
+    border-radius: 50%;
+    transform: translateZ(20px);
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.6);
 }
+
+.flag img{
+    height: 80px;
+    width: 80px;
+}
+
+
+.validity{
+    text-align: center;
+    margin-top: 4rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    color: var(--valid);
+    box-shadow: 0 0 5px var(--valid);
+    font-size: 34px;
+    width: 300px;
+    border: 2px solid var(--valid);
+    padding: 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    0%{
+        box-shadow: 0px 0px 10px var(--valid);
+    }
+    100%{
+        box-shadow: 0px 0px 25px var(--valid);
+    }
+}
+
+
+
