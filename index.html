@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <script src="app.js" defer></script>
+    <script defer src = "https://pyscript.net/unstable/pyscript.js"></script>
     <title>Card Validator</title>
 </head>
 <body>
@@ -18,20 +19,23 @@
             <form onsubmit="return check()" class="checkform">
                 <label for="card-number">Enter Card Number:</label><br>
                 <input type="text" id="card-number" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1')" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" required><br>
-                <input type="submit" value="CHECK" id="but">
+                <input type="submit" value="CHECK" id="but" py-Click="checkLuhn()">
             </form> 
         </div>
         <div class="card" data-tilt>
             <img src="images/chip.png" alt="" class="chip">
             <img src="images/card.jpg" alt="" class="bluecard">
-            <span class="bname">BARODA CENTRAL COOPERATIVE BANK, LTD.</span>
-            <span class="scheme">classic Credit</span>
+            <span class="bname">BANK Name, LTD.</span>
+            <span class="scheme">Credit/Debit</span>
             <span class="cnum">xxxx xxxx xxxx xxxx</span>
-            <span class="type">Mastercard</span>
-            <span class="flag"><img crossorigin="anonymous" src="https://countryflagsapi.com/png/zimbabwe" alt=""></span>
+            <span class="type">Card Type</span>
+            <span class="flag"><img crossorigin="anonymous" src="images/globe.png" alt="" class="cflag"></span>
+            <span class="cCity">City, Country</span>
         </div>
     </div>
     <section class="validity">Invalid Card</section>
 </body>
+<py-script src="luhn.py">
+</py-script>
 <script type="text/javascript" src="tilt.js"></script>
 </html>

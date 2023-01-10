@@ -4,9 +4,11 @@
     box-sizing: border-box;
     font-family: Lato;
 }
+
 :root{
  --valid : red;
 }
+
 
 header{
     height: 5.4rem;
@@ -70,6 +72,7 @@ input[type=submit]{
 }
 
 .card{
+    text-shadow: 2px 2px 3px #535353;
     position: relative;
     height: 350px;
     width: 590px;
@@ -97,7 +100,7 @@ input[type=submit]{
 
 }
 
-.bname,.scheme,.type,.cnum{
+.bname,.scheme,.type,.cnum,.cCity{
     position: absolute;
     color: white;
 }
@@ -149,8 +152,16 @@ input[type=submit]{
     width: 80px;
 }
 
+.cCity{
+    position: absolute;
+    top: 285px;
+    left: 130px;
+    z-index: 999;
+    font-size: 25px;
+}
 
 .validity{
+    /* display: none;    */
     text-align: center;
     margin-top: 4rem;
     margin-left: 50%;
@@ -175,5 +186,16 @@ input[type=submit]{
     }
 }
 
+.cshake{
+    animation: shake 0.35s;
+}
+
+@keyframes shake{
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
 
 
