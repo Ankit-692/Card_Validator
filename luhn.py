@@ -16,6 +16,6 @@ def checkLuhn():
         isSecond = not isSecond
     
     if (nSum % 10 == 0):
-        print("This is a valid card")
+        Element('validity').write("Valid Card");
     else:
-        print("This is not a valid card")
+        Element('validity').write("Invalid Card");

@@ -6,6 +6,8 @@ const scheme = document.querySelector(".scheme");
 const flag = document.querySelector(".cflag");
 const cCity = document.querySelector(".cCity");
 const bcard = document.querySelector(".card");
+const validy = document.querySelector(".validity");
+const root = document.querySelector(':root');
 
 cardNumberInput.addEventListener("keyup", (event) => {
     const key = event.key;
@@ -51,6 +53,14 @@ const check = ()=>{
     event.preventDefault();
     let cardNum = cardNumberInput.value;
     cardCheck(cardNum);
+    if(validy.textContent == 'Valid Card'){
+        root.style.setProperty("--valid","Green");
+        root.style.setProperty("--display",'block');
+    }
+    else{
+        root.style.setProperty("--valid","red");
+        root.style.setProperty("--display",'block');
+    }
 }
 
 const update = (result)=>{
