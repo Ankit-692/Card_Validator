@@ -34,6 +34,22 @@
         </div>
     </div>
     <section class="validity" id="validity">Invalid Card</section>
+    <div class="bottom">
+        <h1>Bank Identification Number (“BIN”)</h1>
+        <p> Identification Number (“BIN”) or Issuer identification number (“IIN”) is the first six digits of a bank card number or payment cards number and it is part of ISO/IEC 7812. It is commonly used in credit cards and debit cards, stored-value cards, gift cards and other similar cards.
+        BIN is beneficial to identify a card brand, issuing institution or bank, country of issuance, card type and category of cards. This information is very useful in commercial business for fraud prevention, especially in online store.
+        </p>
+
+        <h1>Structure of Credit Card & Debit Card Numbers with BIN</h1>
+        <p>An ISO/IEC 7812 number is up to 19 digits in length and used the following format
+        A BBBBB CCCCCCCCCCCC 
+        where A BBBBB denote the Bank Identification Numbers ("BIN") or Issuer identification number ("IIN")
+        A (Single Digit) specify the Major Industry Identifier (MII).
+        BBBBB (5 Digits) specify the issuing institution or bank.
+        CCCCCCCCCCCC (up to 12 digits) specify the individual account identifier.
+        D (Single Digit) specify the checksum for validation.
+        </p>
+    </div>
 </body>
 <py-script src="luhn.py">
 </py-script>

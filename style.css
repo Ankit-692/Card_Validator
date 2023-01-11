@@ -198,3 +198,11 @@ input[type=submit]{
     75% { transform: rotate(-5deg); }
     100% { transform: rotate(0deg); }
   }
+
+.bottom{
+    width: 55%;
+    margin-top: 140px;
+    line-height: 25px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
