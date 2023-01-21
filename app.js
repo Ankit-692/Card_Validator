@@ -20,6 +20,8 @@ cardNumberInput.addEventListener("keyup", (event) => {
     type.textContent = 'Card Type';
     cCity.textContent = 'City, Country';
     flag.src = "images/globe.png";
+    root.style.setProperty("--display",'none');
+
 });
 
 const cardCheck = async (cardNum)=>{

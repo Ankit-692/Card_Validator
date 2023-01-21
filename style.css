@@ -200,9 +200,20 @@ input[type=submit]{
   }
 
 .bottom{
-    width: 55%;
+    width: 53%;
     margin-top: 140px;
     line-height: 25px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.bottom p{
+    font-size: large;
+    line-height: 45px;
+}
+
+.detail-card{
+    width: 45em;
+    height: 31em;
     margin-left: 50%;
     transform: translateX(-50%);
 }
