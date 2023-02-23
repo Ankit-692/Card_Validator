@@ -14,7 +14,10 @@
     <title>Card Validator</title>
 </head>
 <body>
-    <header><img src="images/logo.png" alt=""></header>
+    <header>
+        <img src="images/logo.png" alt="">
+        <button onclick="vpnapi()" class="ipChk">Check IP</button>
+    </header>
     <div class="top">
         <div class="input">
             <form onsubmit="return check()" class="checkform">
@@ -51,6 +54,9 @@
         CCCCCCCCCCCC (up to 12 digits) specify the individual account identifier.
         D (Single Digit) specify the checksum for validation.
         </p>
+    </div>
+    <div class="ipBox">
+        
     </div>
 </body>
 <py-script src="luhn.py">

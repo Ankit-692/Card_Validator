@@ -217,3 +217,35 @@ input[type=submit]{
     margin-left: 50%;
     transform: translateX(-50%);
 }
+
+/* --------------------------Ip Check------------------------------- */
+
+.ipChk{
+    position: absolute;
+    right: 50px;
+    top: 20px;
+    border: none;
+    background:#0c5af5;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.45);
+}
+
+.ipChk:hover{
+    transform: scale(1.2);
+}
+
+.ipBox{
+    background: red;
+    height: 70vh;
+    width: 60vw;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
