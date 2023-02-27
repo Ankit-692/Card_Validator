@@ -100,7 +100,8 @@ const update = (result)=>{
 const vpnapi = async()=>{
 
     await fetch("https://api.ipify.org/?format=json")
-    .then(result => console.log(result.json()));
+    .then(result => result.json())
+    .then(response => console.log(response.ip));
 
     // await fetch(`https://vpnapi.io/api/${}?key=2563c0ea6a4f4088a7fddd2684dabc6c`)
     
