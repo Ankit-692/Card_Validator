@@ -97,12 +97,94 @@ const update = (result)=>{
 
 // ------------------------- Api -----------------------------------//
 
+const ip_box = document.querySelector('.ipBox')
+const user_ip = document.querySelector('.user_ip')
+const user_region = document.querySelector('.region')
+const vpn_logo = document.querySelector('.vpn_logo')
+const tor_logo = document.querySelector('.tor_logo')
+const proxy_logo = document.querySelector('.proxy_logo')
+const cloud_logo = document.querySelector('.cloud_logo')
+const anon_logo = document.querySelector('.anon_logo')
+const cross = document.querySelector('.cross')
+
+
 const vpnapi = async()=>{
+    let raw;
+    let key = '11083cab0ab4058b87428174da90e0644de74ef95de5d34c9586110d'
+    await fetch(`https://api.ipdata.co/?api-key=${key}`)
+    .then(response => response.json())
+    .then(result => raw = result)
 
-    await fetch("https://api.ipify.org/?format=json")
-    .then(result => result.json())
-    .then(response => console.log(response.ip));
+    let ip = raw.ip
+    let region = raw.region
+    let cCode = raw.country_code
+    let threat_data = raw.threat
 
-    // await fetch(`https://vpnapi.io/api/${}?key=2563c0ea6a4f4088a7fddd2684dabc6c`)
-    
+    user_ip.textContent = ip
+    user_region.textContent = `${region},${cCode}`
+
+    // VPN
+    if(threat_data.is_vpn == true){
+        vpn_logo.style.background = 'green'
+        vpn_logo.style.boxShadow = "2px 4px 11px green"
+    }
+    else{
+        vpn_logo.style.background = 'red'
+        vpn_logo.style.boxShadow = "2px 4px 11px red"
+    }
+
+
+
+    // tor
+    if(threat_data.is_tor == true){
+        tor_logo.style.background = 'green'
+        tor_logo.style.boxShadow = "2px 4px 11px green"
+    }
+    else{
+        tor_logo.style.background = 'red'
+        tor_logo.style.boxShadow = "2px 4px 11px red"
+    }
+
+
+
+    // proxy
+    if(threat_data.is_proxy == true){
+        proxy_logo.style.background = 'green'
+        proxy_logo.style.boxShadow = "2px 4px 11px green"
+    }
+    else{
+        proxy_logo.style.background = 'red'
+        proxy_logo.style.boxShadow = "2px 4px 11px red"
+    }
+
+
+
+    // cloud
+    if(threat_data.is_icloud_relay == true){
+        cloud_logo.style.background = 'green'
+        cloud_logo.style.boxShadow = "2px 4px 11px green"
+    }
+    else{
+        cloud_logo.style.background = 'red'
+        cloud_logo.style.boxShadow = "2px 4px 11px red"
+    }
+
+
+    // anonymous
+    if(threat_data.is_anonymous == true){
+        anon_logo.style.background = 'green'
+        anon_logo.style.boxShadow = "2px 4px 11px green"
+    }
+    else{
+        anon_logo.style.background = 'red'
+        anon_logo.style.boxShadow = "2px 4px 11px red"
+    }
+
+
+    ip_box.style.display = 'block'
 }
+
+cross.addEventListener('click',()=>{
+    ip_box.style.display = 'none'
+})
+
