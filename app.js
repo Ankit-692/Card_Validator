@@ -179,6 +179,16 @@ const vpnapi = async()=>{
         anon_logo.style.background = 'red'
         anon_logo.style.boxShadow = "2px 4px 11px red"
     }
+    
+    //threat
+        if(threat_data.is_threat == true){
+        threat_logo.style.background = 'green'
+        threat_logo.style.boxShadow = "2px 4px 11px green"
+    }
+    else{
+        threat_logo.style.background = 'red'
+        threat_logo.style.boxShadow = "2px 4px 11px red"
+    }
 
 
     ip_box.style.display = 'block'
