@@ -110,7 +110,7 @@ const cross = document.querySelector('.cross')
 
 const vpnapi = async()=>{
     let raw;
-    let key = process.env.api_check_key
+    let key = '11083cab0ab4058b87428174da90e0644de74ef95de5d34c9586110d'
     await fetch(`https://api.ipdata.co/?api-key=${key}`)
     .then(response => response.json())
     .then(result => raw = result)
