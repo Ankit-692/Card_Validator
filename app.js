@@ -111,21 +111,29 @@ const threat_logo = document.querySelector('.threat_logo')
 
 const vpnapi = async()=>{
     let raw;
+    let new_raw;
     let key = '11083cab0ab4058b87428174da90e0644de74ef95de5d34c9586110d'
     await fetch(`https://api.ipdata.co/?api-key=${key}`)
     .then(response => response.json())
     .then(result => raw = result)
-
+    
     let ip = raw.ip
     let region = raw.region
     let cCode = raw.country_code
     let threat_data = raw.threat
 
+    let new_key = '2563c0ea6a4f4088a7fddd2684dabc6c'
+    await fetch(`https://vpnapi.io/api/${ip}?key=${new_key}}`)
+    .then(resp => resp.json())
+    .then(res => new_raw = res.security)
+
+    console.log(new_raw)
+
     user_ip.textContent = ip
     user_region.textContent = `${region},${cCode}`
 
     // VPN
-    if(threat_data.is_vpn == true){
+    if(new_raw.vpn == true){
         vpn_logo.style.background = 'green'
         vpn_logo.style.boxShadow = "2px 4px 11px green"
     }
@@ -137,7 +145,7 @@ const vpnapi = async()=>{
 
 
     // tor
-    if(threat_data.is_tor == true){
+    if(new_raw.tor == true){
         tor_logo.style.background = 'green'
         tor_logo.style.boxShadow = "2px 4px 11px green"
     }
@@ -149,7 +157,7 @@ const vpnapi = async()=>{
 
 
     // proxy
-    if(threat_data.is_proxy == true){
+    if(new_raw.proxy == true){
         proxy_logo.style.background = 'green'
         proxy_logo.style.boxShadow = "2px 4px 11px green"
     }
@@ -161,7 +169,7 @@ const vpnapi = async()=>{
 
 
     // cloud
-    if(threat_data.is_icloud_relay == true){
+    if(new_raw.relay == true){
         cloud_logo.style.background = 'green'
         cloud_logo.style.boxShadow = "2px 4px 11px green"
     }
@@ -191,7 +199,6 @@ const vpnapi = async()=>{
         threat_logo.style.boxShadow = "2px 4px 11px red"
     }
 
-    console.log(threat_data)
     ip_box.style.display = 'block'
 }
 
