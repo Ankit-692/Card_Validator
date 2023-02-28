@@ -191,7 +191,7 @@ const vpnapi = async()=>{
         threat_logo.style.boxShadow = "2px 4px 11px red"
     }
 
-
+    console.log(threat_data)
     ip_box.style.display = 'block'
 }
 
