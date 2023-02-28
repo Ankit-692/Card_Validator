@@ -106,6 +106,7 @@ const proxy_logo = document.querySelector('.proxy_logo')
 const cloud_logo = document.querySelector('.cloud_logo')
 const anon_logo = document.querySelector('.anon_logo')
 const cross = document.querySelector('.cross')
+const threat_logo = document.querySelector('.threat_logo')
 
 
 const vpnapi = async()=>{
