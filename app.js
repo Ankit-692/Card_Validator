@@ -25,7 +25,7 @@ cardNumberInput.addEventListener("keyup", (event) => {
 });
 
 const cardCheck = async (cardNum)=>{
-        let binNum = parseInt(cardNum.slice(0,6),10);
+        let binNum = parseInt(cardNum.slice(0,8),10);
         try{
             cnum.style.color = 'white';
             await fetch(`https://lookup.binlist.net/${binNum}`)
